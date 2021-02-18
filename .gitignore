@@ -1,5 +1,6 @@
 # for editor
 *~
+*.swp
 
 # for Mac
 .DS_Store
