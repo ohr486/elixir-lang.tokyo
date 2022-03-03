@@ -1,0 +1,30 @@
+<h1>Listing Meetups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Site</th>
+      <th>Hashtag</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for meetup <- @meetups do %>
+    <tr>
+      <td><%= meetup.name %></td>
+      <td><%= meetup.site %></td>
+      <td><%= meetup.hashtag %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.meetup_path(@conn, :show, meetup) %></span>
+        <span><%= link "Edit", to: Routes.meetup_path(@conn, :edit, meetup) %></span>
+        <span><%= link "Delete", to: Routes.meetup_path(@conn, :delete, meetup), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Meetup", to: Routes.meetup_path(@conn, :new) %></span>

@@ -1,0 +1,5 @@
+<h1>Edit Meetup</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.meetup_path(@conn, :update, @meetup)) %>
+
+<span><%= link "Back", to: Routes.meetup_path(@conn, :index) %></span>
