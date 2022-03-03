@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    command: mix phx.server
+    environment:
+      MIX_TEST_DB_HOST: mysql
+    ports:
+      - 4000:4000
+    depends_on:
+      - mysql
+    volumes:
+      - .:/app
+      - node_modules:/app/assets/node_modules
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  node_modules:
+  mysql_data:
