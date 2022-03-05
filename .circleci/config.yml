@@ -8,15 +8,11 @@ jobs:
           MIX_ENV: test
       - image: circleci/mysql:8.0
 
-    working_directory: ~/repo
+    working_directory: ~/app
 
     steps:
       - checkout
-      - run:
-          working_directory: app
-          command: |
-            mix local.hex --force
-            mix local.rebar --force
-            mix deps.get, compile
-            mix test
+      - run: mix local.hex --force
+      - run: mix local.rebar --force
+      - run: mix do deps.get, compile
 
