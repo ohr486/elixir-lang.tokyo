@@ -25,7 +25,7 @@ jobs:
           working_directory: app
           command: mix do deps.get, compile
       - save_cache:
-          key: v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
+          key: v1-mix-cache-{{ .Branch }}-{{ checksum "app/mix.lock" }}
           paths: "app/deps"
       - save_cache:
           key: v1-build-cache-{{ .Branch }}
