@@ -12,21 +12,26 @@ jobs:
 
     steps:
       - checkout
+      - run: env # for debug
+
       - run: mix local.hex --force
       - run: mix local.rebar --force
-
-      # for debug
-      - run: pwd
-      - run:
-          working_directory: app
-          command: pwd
-      - run: which mix
-      - run: ls -alh
-      - run:
-          working_directory: app
-          command: ls -alh
+      - restore_cache:
+          keys:
+            - v1-build-cache-{{ .Branch }}
+            - v1-build-cache
 
       - run:
           working_directory: app
           command: mix do deps.get, compile
+      - save_cache:
+          key: v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
+          paths: "app/deps"
+      - save_cache:
+          key: v1-build-cache-{{ .Branch }}
+          paths: "app/_build"
+
+      - run:
+          working_directory: app
+          command: mix test
 
