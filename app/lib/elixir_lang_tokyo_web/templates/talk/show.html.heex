@@ -1,0 +1,28 @@
+<h1>Show Talk</h1>
+
+<ul>
+
+  <li>
+    <strong>Event:</strong>
+    <%= @talk.event_id %>
+  </li>
+
+  <li>
+    <strong>Alchemist:</strong>
+    <%= @talk.alchemist_id %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @talk.title %>
+  </li>
+
+  <li>
+    <strong>Slide:</strong>
+    <%= @talk.slide %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.talk_path(@conn, :edit, @talk) %></span> |
+<span><%= link "Back", to: Routes.talk_path(@conn, :index) %></span>

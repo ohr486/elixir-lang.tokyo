@@ -1,0 +1,23 @@
+<h1>Show Event</h1>
+
+<ul>
+
+  <li>
+    <strong>Meetup:</strong>
+    <%= @event.meetup_id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @event.name %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @event.url %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span> |
+<span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>

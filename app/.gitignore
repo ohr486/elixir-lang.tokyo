@@ -32,3 +32,6 @@ elixir_lang_tokyo-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# ecto erd
+ecto_erd.dot
+erd.png

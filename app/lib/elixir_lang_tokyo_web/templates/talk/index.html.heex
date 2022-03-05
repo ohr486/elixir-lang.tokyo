@@ -1,0 +1,32 @@
+<h1>Listing Talks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Alchemist</th>
+      <th>Title</th>
+      <th>Slide</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for talk <- @talks do %>
+    <tr>
+      <td><%= talk.event_id %></td>
+      <td><%= talk.alchemist_id %></td>
+      <td><%= talk.title %></td>
+      <td><%= talk.slide %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.talk_path(@conn, :show, talk) %></span>
+        <span><%= link "Edit", to: Routes.talk_path(@conn, :edit, talk) %></span>
+        <span><%= link "Delete", to: Routes.talk_path(@conn, :delete, talk), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Talk", to: Routes.talk_path(@conn, :new) %></span>

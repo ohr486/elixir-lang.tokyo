@@ -19,4 +19,37 @@ defmodule ElixirLangTokyo.CommunityFixtures do
 
     meetup
   end
+
+  @doc """
+  Generate a event.
+  """
+  def event_fixture(attrs \\ %{}) do
+    {:ok, event} =
+      attrs
+      |> Enum.into(%{
+        meetup_id: 42,
+        name: "some name",
+        url: "some url"
+      })
+      |> ElixirLangTokyo.Community.create_event()
+
+    event
+  end
+
+  @doc """
+  Generate a talk.
+  """
+  def talk_fixture(attrs \\ %{}) do
+    {:ok, talk} =
+      attrs
+      |> Enum.into(%{
+        alchemist_id: 42,
+        event_id: 42,
+        slide: "some slide",
+        title: "some title"
+      })
+      |> ElixirLangTokyo.Community.create_talk()
+
+    talk
+  end
 end
