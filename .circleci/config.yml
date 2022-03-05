@@ -3,10 +3,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/elixir:1.13
+      - image: circleci/elixir:1.13-node
         environment:
           MIX_ENV: test
+          MIX_TEST_DB_HOST: localhost
       - image: circleci/mysql:8.0
+        environment:
+          MYSQL_USER: tokyoex
+          MYSQL_PASSWORD: beamlangtyokyo
 
     working_directory: ~/repo
 
