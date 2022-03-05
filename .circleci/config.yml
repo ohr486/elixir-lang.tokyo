@@ -9,8 +9,7 @@ jobs:
           MIX_TEST_DB_HOST: localhost
       - image: circleci/mysql:8.0
         environment:
-          MYSQL_USER: tokyoex
-          MYSQL_PASSWORD: beamlangtyokyo
+          MYSQL_ROOT_PASSWORD: tokyoex
 
     working_directory: ~/repo
 

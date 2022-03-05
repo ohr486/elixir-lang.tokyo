@@ -6,8 +6,8 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :elixir_lang_tokyo, ElixirLangTokyo.Repo,
-  username: "tokyoex",
-  password: "beamlangtokyo",
+  username: "root",
+  password: "tokyoex",
   hostname: "#{System.get_env("MIX_TEST_DB_HOST")}",
   database: "elixir_lang_tokyo_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
