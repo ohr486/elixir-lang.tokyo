@@ -50,4 +50,20 @@ defmodule ElixirLangTokyo.CommunityFixtures do
 
     talk
   end
+
+  @doc """
+  Generate a alchemist.
+  """
+  def alchemist_fixture(attrs \\ %{}) do
+    {:ok, alchemist} =
+      attrs
+      |> Enum.into(%{
+        github: "some github",
+        name: "some name",
+        twitter: "some twitter"
+      })
+      |> ElixirLangTokyo.Community.create_alchemist()
+
+    alchemist
+  end
 end

@@ -22,6 +22,8 @@ defmodule ElixirLangTokyoWeb.Router do
     resources "/meetups", MeetupController
     resources "/events", EventController
     resources "/talks", TalkController
+
+    resources "/alchemists", AlchemistController
   end
 
   # Other scopes may use custom stacks.

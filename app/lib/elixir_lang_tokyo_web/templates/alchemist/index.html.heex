@@ -1,0 +1,30 @@
+<h1>Listing Alchemists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Github</th>
+      <th>Twitter</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for alchemist <- @alchemists do %>
+    <tr>
+      <td><%= alchemist.name %></td>
+      <td><%= alchemist.github %></td>
+      <td><%= alchemist.twitter %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.alchemist_path(@conn, :show, alchemist) %></span>
+        <span><%= link "Edit", to: Routes.alchemist_path(@conn, :edit, alchemist) %></span>
+        <span><%= link "Delete", to: Routes.alchemist_path(@conn, :delete, alchemist), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Alchemist", to: Routes.alchemist_path(@conn, :new) %></span>

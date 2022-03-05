@@ -122,7 +122,7 @@ defmodule ElixirLangTokyo.CommunityTest do
 
     import ElixirLangTokyo.CommunityFixtures
 
-    @invalid_attrs %{alchemist_id: nil, slide: nil, title: nil}
+    @invalid_attrs %{slide: nil, title: nil}
 
     test "list_talks/0 returns all talks" do
       talk = talk_fixture()
@@ -135,10 +135,9 @@ defmodule ElixirLangTokyo.CommunityTest do
     end
 
     test "create_talk/1 with valid data creates a talk" do
-      valid_attrs = %{alchemist_id: 42, slide: "some slide", title: "some title"}
+      valid_attrs = %{slide: "some slide", title: "some title"}
 
       assert {:ok, %Talk{} = talk} = Community.create_talk(valid_attrs)
-      assert talk.alchemist_id == 42
       assert talk.slide == "some slide"
       assert talk.title == "some title"
     end
@@ -149,10 +148,9 @@ defmodule ElixirLangTokyo.CommunityTest do
 
     test "update_talk/2 with valid data updates the talk" do
       talk = talk_fixture()
-      update_attrs = %{alchemist_id: 43, slide: "some updated slide", title: "some updated title"}
+      update_attrs = %{slide: "some updated slide", title: "some updated title"}
 
       assert {:ok, %Talk{} = talk} = Community.update_talk(talk, update_attrs)
-      assert talk.alchemist_id == 43
       assert talk.slide == "some updated slide"
       assert talk.title == "some updated title"
     end
@@ -172,6 +170,64 @@ defmodule ElixirLangTokyo.CommunityTest do
     test "change_talk/1 returns a talk changeset" do
       talk = talk_fixture()
       assert %Ecto.Changeset{} = Community.change_talk(talk)
+    end
+  end
+
+  describe "alchemists" do
+    alias ElixirLangTokyo.Community.Alchemist
+
+    import ElixirLangTokyo.CommunityFixtures
+
+    @invalid_attrs %{github: nil, name: nil, twitter: nil}
+
+    test "list_alchemists/0 returns all alchemists" do
+      alchemist = alchemist_fixture()
+      assert Community.list_alchemists() == [alchemist]
+    end
+
+    test "get_alchemist!/1 returns the alchemist with given id" do
+      alchemist = alchemist_fixture()
+      assert Community.get_alchemist!(alchemist.id) == alchemist
+    end
+
+    test "create_alchemist/1 with valid data creates a alchemist" do
+      valid_attrs = %{github: "some github", name: "some name", twitter: "some twitter"}
+
+      assert {:ok, %Alchemist{} = alchemist} = Community.create_alchemist(valid_attrs)
+      assert alchemist.github == "some github"
+      assert alchemist.name == "some name"
+      assert alchemist.twitter == "some twitter"
+    end
+
+    test "create_alchemist/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Community.create_alchemist(@invalid_attrs)
+    end
+
+    test "update_alchemist/2 with valid data updates the alchemist" do
+      alchemist = alchemist_fixture()
+      update_attrs = %{github: "some updated github", name: "some updated name", twitter: "some updated twitter"}
+
+      assert {:ok, %Alchemist{} = alchemist} = Community.update_alchemist(alchemist, update_attrs)
+      assert alchemist.github == "some updated github"
+      assert alchemist.name == "some updated name"
+      assert alchemist.twitter == "some updated twitter"
+    end
+
+    test "update_alchemist/2 with invalid data returns error changeset" do
+      alchemist = alchemist_fixture()
+      assert {:error, %Ecto.Changeset{}} = Community.update_alchemist(alchemist, @invalid_attrs)
+      assert alchemist == Community.get_alchemist!(alchemist.id)
+    end
+
+    test "delete_alchemist/1 deletes the alchemist" do
+      alchemist = alchemist_fixture()
+      assert {:ok, %Alchemist{}} = Community.delete_alchemist(alchemist)
+      assert_raise Ecto.NoResultsError, fn -> Community.get_alchemist!(alchemist.id) end
+    end
+
+    test "change_alchemist/1 returns a alchemist changeset" do
+      alchemist = alchemist_fixture()
+      assert %Ecto.Changeset{} = Community.change_alchemist(alchemist)
     end
   end
 end

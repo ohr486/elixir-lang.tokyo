@@ -1,0 +1,23 @@
+<h1>Show Alchemist</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @alchemist.name %>
+  </li>
+
+  <li>
+    <strong>Github:</strong>
+    <%= @alchemist.github %>
+  </li>
+
+  <li>
+    <strong>Twitter:</strong>
+    <%= @alchemist.twitter %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.alchemist_path(@conn, :edit, @alchemist) %></span> |
+<span><%= link "Back", to: Routes.alchemist_path(@conn, :index) %></span>

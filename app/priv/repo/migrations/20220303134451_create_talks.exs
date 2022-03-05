@@ -4,7 +4,7 @@ defmodule ElixirLangTokyo.Repo.Migrations.CreateTalks do
   def change do
     create table(:talks) do
       add :event_id, references(:events, on_delete: :nothing)
-      add :alchemist_id, :integer
+      add :alchemist_id, references(:alchemists, on_delete: :nothing)
       add :title, :string
       add :slide, :string
 
@@ -12,5 +12,6 @@ defmodule ElixirLangTokyo.Repo.Migrations.CreateTalks do
     end
 
     create index(:talks, [:event_id])
+    create index(:talks, [:alchemist_id])
   end
 end

@@ -3,7 +3,7 @@ defmodule ElixirLangTokyo.Community.Talk do
   import Ecto.Changeset
 
   schema "talks" do
-    field :alchemist_id, :integer
+    belongs_to :alchemist, ElixirLangTokyo.Community.Alchemist
     belongs_to :event, ElixirLangTokyo.Community.Event
     field :slide, :string
     field :title, :string
@@ -14,7 +14,7 @@ defmodule ElixirLangTokyo.Community.Talk do
   @doc false
   def changeset(talk, attrs) do
     talk
-    |> cast(attrs, [:alchemist_id, :title, :slide])
-    |> validate_required([:alchemist_id, :title, :slide])
+    |> cast(attrs, [:title, :slide])
+    |> validate_required([:title, :slide])
   end
 end
