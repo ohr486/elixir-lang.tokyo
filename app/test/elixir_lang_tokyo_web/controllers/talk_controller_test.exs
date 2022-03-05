@@ -3,9 +3,9 @@ defmodule ElixirLangTokyoWeb.TalkControllerTest do
 
   import ElixirLangTokyo.CommunityFixtures
 
-  @create_attrs %{alchemist_id: 42, event_id: 42, slide: "some slide", title: "some title"}
-  @update_attrs %{alchemist_id: 43, event_id: 43, slide: "some updated slide", title: "some updated title"}
-  @invalid_attrs %{alchemist_id: nil, event_id: nil, slide: nil, title: nil}
+  @create_attrs %{alchemist_id: 42, slide: "some slide", title: "some title"}
+  @update_attrs %{alchemist_id: 43, slide: "some updated slide", title: "some updated title"}
+  @invalid_attrs %{alchemist_id: nil, slide: nil, title: nil}
 
   describe "index" do
     test "lists all talks", %{conn: conn} do

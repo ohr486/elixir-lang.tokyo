@@ -27,7 +27,6 @@ defmodule ElixirLangTokyo.CommunityFixtures do
     {:ok, event} =
       attrs
       |> Enum.into(%{
-        meetup_id: 42,
         name: "some name",
         url: "some url"
       })
@@ -44,7 +43,6 @@ defmodule ElixirLangTokyo.CommunityFixtures do
       attrs
       |> Enum.into(%{
         alchemist_id: 42,
-        event_id: 42,
         slide: "some slide",
         title: "some title"
       })

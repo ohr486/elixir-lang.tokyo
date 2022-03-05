@@ -66,7 +66,7 @@ defmodule ElixirLangTokyo.CommunityTest do
 
     import ElixirLangTokyo.CommunityFixtures
 
-    @invalid_attrs %{meetup_id: nil, name: nil, url: nil}
+    @invalid_attrs %{name: nil, url: nil}
 
     test "list_events/0 returns all events" do
       event = event_fixture()
@@ -79,10 +79,9 @@ defmodule ElixirLangTokyo.CommunityTest do
     end
 
     test "create_event/1 with valid data creates a event" do
-      valid_attrs = %{meetup_id: 42, name: "some name", url: "some url"}
+      valid_attrs = %{name: "some name", url: "some url"}
 
       assert {:ok, %Event{} = event} = Community.create_event(valid_attrs)
-      assert event.meetup_id == 42
       assert event.name == "some name"
       assert event.url == "some url"
     end
@@ -93,10 +92,9 @@ defmodule ElixirLangTokyo.CommunityTest do
 
     test "update_event/2 with valid data updates the event" do
       event = event_fixture()
-      update_attrs = %{meetup_id: 43, name: "some updated name", url: "some updated url"}
+      update_attrs = %{name: "some updated name", url: "some updated url"}
 
       assert {:ok, %Event{} = event} = Community.update_event(event, update_attrs)
-      assert event.meetup_id == 43
       assert event.name == "some updated name"
       assert event.url == "some updated url"
     end
@@ -124,7 +122,7 @@ defmodule ElixirLangTokyo.CommunityTest do
 
     import ElixirLangTokyo.CommunityFixtures
 
-    @invalid_attrs %{alchemist_id: nil, event_id: nil, slide: nil, title: nil}
+    @invalid_attrs %{alchemist_id: nil, slide: nil, title: nil}
 
     test "list_talks/0 returns all talks" do
       talk = talk_fixture()
@@ -137,11 +135,10 @@ defmodule ElixirLangTokyo.CommunityTest do
     end
 
     test "create_talk/1 with valid data creates a talk" do
-      valid_attrs = %{alchemist_id: 42, event_id: 42, slide: "some slide", title: "some title"}
+      valid_attrs = %{alchemist_id: 42, slide: "some slide", title: "some title"}
 
       assert {:ok, %Talk{} = talk} = Community.create_talk(valid_attrs)
       assert talk.alchemist_id == 42
-      assert talk.event_id == 42
       assert talk.slide == "some slide"
       assert talk.title == "some title"
     end
@@ -152,11 +149,10 @@ defmodule ElixirLangTokyo.CommunityTest do
 
     test "update_talk/2 with valid data updates the talk" do
       talk = talk_fixture()
-      update_attrs = %{alchemist_id: 43, event_id: 43, slide: "some updated slide", title: "some updated title"}
+      update_attrs = %{alchemist_id: 43, slide: "some updated slide", title: "some updated title"}
 
       assert {:ok, %Talk{} = talk} = Community.update_talk(talk, update_attrs)
       assert talk.alchemist_id == 43
-      assert talk.event_id == 43
       assert talk.slide == "some updated slide"
       assert talk.title == "some updated title"
     end

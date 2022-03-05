@@ -3,9 +3,9 @@ defmodule ElixirLangTokyoWeb.EventControllerTest do
 
   import ElixirLangTokyo.CommunityFixtures
 
-  @create_attrs %{meetup_id: 42, name: "some name", url: "some url"}
-  @update_attrs %{meetup_id: 43, name: "some updated name", url: "some updated url"}
-  @invalid_attrs %{meetup_id: nil, name: nil, url: nil}
+  @create_attrs %{name: "some name", url: "some url"}
+  @update_attrs %{name: "some updated name", url: "some updated url"}
+  @invalid_attrs %{name: nil, url: nil}
 
   describe "index" do
     test "lists all events", %{conn: conn} do

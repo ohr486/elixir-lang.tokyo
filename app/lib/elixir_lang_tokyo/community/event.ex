@@ -15,7 +15,7 @@ defmodule ElixirLangTokyo.Community.Event do
   @doc false
   def changeset(event, attrs) do
     event
-    |> cast(attrs, [:meetup_id, :name, :url])
-    |> validate_required([:meetup_id, :name, :url])
+    |> cast(attrs, [:name, :url])
+    |> validate_required([:name, :url])
   end
 end

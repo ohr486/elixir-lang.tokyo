@@ -14,7 +14,7 @@ defmodule ElixirLangTokyo.Community.Talk do
   @doc false
   def changeset(talk, attrs) do
     talk
-    |> cast(attrs, [:event_id, :alchemist_id, :title, :slide])
-    |> validate_required([:event_id, :alchemist_id, :title, :slide])
+    |> cast(attrs, [:alchemist_id, :title, :slide])
+    |> validate_required([:alchemist_id, :title, :slide])
   end
 end
