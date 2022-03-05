@@ -1,0 +1,15 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/elixir:1.13
+      - image: circleci/mysql:8.0
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+           working_directory: app
+           command: mix do deps.get, ecto.create, test
