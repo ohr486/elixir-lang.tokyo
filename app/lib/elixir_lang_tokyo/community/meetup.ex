@@ -7,6 +7,8 @@ defmodule ElixirLangTokyo.Community.Meetup do
     field :name, :string
     field :site, :string
 
+    has_many :events, ElixirLangTokyo.Community.Event
+
     timestamps()
   end
 

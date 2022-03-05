@@ -3,7 +3,7 @@ defmodule ElixirLangTokyo.Repo.Migrations.CreateEvents do
 
   def change do
     create table(:events) do
-      add :meetup_id, :integer
+      add :meetup_id, references(:meetups)
       add :name, :string
       add :url, :string
 

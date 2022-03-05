@@ -4,7 +4,7 @@ defmodule ElixirLangTokyo.Community.Talk do
 
   schema "talks" do
     field :alchemist_id, :integer
-    field :event_id, :integer
+    belongs_to :event, ElixirLangTokyo.Community.Event
     field :slide, :string
     field :title, :string
 

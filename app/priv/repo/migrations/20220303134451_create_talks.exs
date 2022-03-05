@@ -3,7 +3,7 @@ defmodule ElixirLangTokyo.Repo.Migrations.CreateTalks do
 
   def change do
     create table(:talks) do
-      add :event_id, :integer
+      add :event_id, references(:events)
       add :alchemist_id, :integer
       add :title, :string
       add :slide, :string

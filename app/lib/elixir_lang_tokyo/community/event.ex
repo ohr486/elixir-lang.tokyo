@@ -3,9 +3,11 @@ defmodule ElixirLangTokyo.Community.Event do
   import Ecto.Changeset
 
   schema "events" do
-    field :meetup_id, :integer
+    belongs_to :meetup, ElixirLangTokyo.Community.Meetup
     field :name, :string
     field :url, :string
+
+    has_many :talks, ElixirLangTokyo.Community.Talk
 
     timestamps()
   end
