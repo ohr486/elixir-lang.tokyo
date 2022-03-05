@@ -18,6 +18,7 @@ jobs:
       # for debug
       - run: pwd
       - run: which mix
+      - run: ls -alh
 
       - run: mix do deps.get, compile
 
