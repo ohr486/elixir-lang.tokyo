@@ -14,5 +14,10 @@ jobs:
       - checkout
       - run: mix local.hex --force
       - run: mix local.rebar --force
+
+      # for debug
+      - run: pwd
+      - run: which mix
+
       - run: mix do deps.get, compile
 
