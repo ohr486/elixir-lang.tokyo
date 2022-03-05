@@ -8,7 +8,7 @@ jobs:
           MIX_ENV: test
       - image: circleci/mysql:8.0
 
-    working_directory: ~/app
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -17,8 +17,16 @@ jobs:
 
       # for debug
       - run: pwd
+      - run:
+          working_directory: app
+          command: pwd
       - run: which mix
       - run: ls -alh
+      - run:
+          working_directory: app
+          command: ls -alh
 
-      - run: mix do deps.get, compile
+      - run:
+          working_directory: app
+          command: mix do deps.get, compile
 
