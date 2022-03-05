@@ -4,6 +4,8 @@ jobs:
   build:
     docker:
       - image: circleci/elixir:1.13
+        environment:
+          MIX_ENV: test
       - image: circleci/mysql:8.0
 
     working_directory: ~/repo
@@ -11,8 +13,8 @@ jobs:
     steps:
       - checkout
       - run:
-           working_directory: app
-           command: |
+          working_directory: app
+          command: |
             mix local.hex --force
             mix local.rebar --force
             mix deps.get, compile
