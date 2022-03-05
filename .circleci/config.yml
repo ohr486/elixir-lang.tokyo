@@ -12,4 +12,9 @@ jobs:
       - checkout
       - run:
            working_directory: app
-           command: mix do deps.get, ecto.create, test
+           command: |
+            mix local.hex --force
+            mix local.rebar --force
+            mix deps.get, compile
+            mix test
+
