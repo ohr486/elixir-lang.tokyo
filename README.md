@@ -15,3 +15,10 @@ $ docker-compose run app mix ecto.migrate
 $ docker-compose up -d
 ```
 
+## ERD
+
+```bash
+$ cd app
+$ docker-compose run app mix erd
+$ ./open.erd
+```
