@@ -9,3 +9,19 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alchemist = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Alchemist{
+  name: "ohr486", github: "ohr486", twitter: "ohrdev"
+})
+
+meetup = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Meetup{
+  name: "tokyo.ex", site: "https://beam-lang.connpass.com/", hashtag: "tokyoex"
+})
+
+event = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Event{
+  meetup: meetup, name: "tokyo.ex#16", url: "https://beam-lang.connpass.com/event/240399/"
+})
+
+talk = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Talk{
+  event: event, alchemist: alchemist, title: "Plug & WAF", slide: "https://speakerdeck.com/ohr486/plug-and-waf"
+})
