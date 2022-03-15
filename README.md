@@ -22,3 +22,9 @@ $ cd app
 $ docker-compose run app mix erd
 $ ./open.erd
 ```
+
+## Deploy
+
+
+
+
