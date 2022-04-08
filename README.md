@@ -20,7 +20,7 @@ $ docker-compose up -d
 ```bash
 $ cd app
 $ docker-compose run app mix erd
-$ ./open.erd
+$ ./open_erd.sh
 ```
 
 ## Deploy

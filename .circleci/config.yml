@@ -1,4 +1,7 @@
-version: 2
+version: 2.1
+
+orbs:
+  slack: circleci/slack@4.9.3
 
 jobs:
   build:
@@ -37,4 +40,13 @@ jobs:
       - run:
           working_directory: app
           command: mix test
+
+      - slack/notify:
+          event: always
+
+workflows:
+  test-and-deploy:
+    jobs:
+      - build:
+          context: ohr486-circleci-notification
 
