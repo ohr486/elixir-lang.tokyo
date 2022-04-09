@@ -1,8 +1,11 @@
 # elixir-lang.tokyo
 
-## CI status
+## CI Status
 
-app-develop [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop.svg?style=svg)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop)
+| branch  | test&lint                                                                                                                                                 |
+|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| master  | -                                                                                                                                                         |
+| develop | [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop.svg?style=svg)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop) |
 
 ## How to setup local env
 
