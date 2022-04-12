@@ -39,6 +39,10 @@ jobs:
 
       - run:
           working_directory: app
+          command: mix lint
+
+      - run:
+          working_directory: app
           command: mix test
 
       - slack/notify:

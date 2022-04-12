@@ -1,4 +1,6 @@
 defmodule ElixirLangTokyo.Community.Meetup do
+  @moduledoc false
+
   use Ecto.Schema
   import Ecto.Changeset
 

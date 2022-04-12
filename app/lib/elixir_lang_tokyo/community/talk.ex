@@ -1,4 +1,6 @@
 defmodule ElixirLangTokyo.Community.Talk do
+  @moduledoc false
+
   use Ecto.Schema
   import Ecto.Changeset
 
