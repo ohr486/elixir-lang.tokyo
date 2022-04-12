@@ -4,8 +4,8 @@
 
 | branch  | test&lint                                                                                                                                                 |
 |:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| master  | -                                                                                                                                                         |
-| develop | [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop.svg?style=shield)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop) |
+| master  | [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/master.svg?style=svg)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/master)   |
+| develop | [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop.svg?style=svg)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop) |
 
 ## How to setup local env
 
