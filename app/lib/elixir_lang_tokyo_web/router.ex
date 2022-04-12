@@ -20,6 +20,10 @@ defmodule ElixirLangTokyoWeb.Router do
     get "/", PageController, :index
 
     resources "/meetups", MeetupController
+    resources "/events", EventController
+    resources "/talks", TalkController
+
+    resources "/alchemists", AlchemistController
   end
 
   # Other scopes may use custom stacks.

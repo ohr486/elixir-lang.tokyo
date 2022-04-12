@@ -8,7 +8,7 @@ import Config
 config :elixir_lang_tokyo, ElixirLangTokyo.Repo,
   username: "root",
   password: "root",
-  hostname: "mysql",
+  hostname: "#{System.get_env("MIX_TEST_DB_HOST")}",
   database: "elixir_lang_tokyo_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10

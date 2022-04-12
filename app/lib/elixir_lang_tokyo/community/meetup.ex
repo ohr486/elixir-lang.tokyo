@@ -1,4 +1,6 @@
 defmodule ElixirLangTokyo.Community.Meetup do
+  @moduledoc false
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -6,6 +8,8 @@ defmodule ElixirLangTokyo.Community.Meetup do
     field :hashtag, :string
     field :name, :string
     field :site, :string
+
+    has_many :events, ElixirLangTokyo.Community.Event
 
     timestamps()
   end

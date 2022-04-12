@@ -1,0 +1,5 @@
+<h1>Edit Alchemist</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.alchemist_path(@conn, :update, @alchemist)) %>
+
+<span><%= link "Back", to: Routes.alchemist_path(@conn, :index) %></span>
