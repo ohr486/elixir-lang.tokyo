@@ -10,6 +10,7 @@ defmodule ElixirLangTokyo.Community.Alchemist do
     field :twitter, :string
 
     has_many :talks, ElixirLangTokyo.Community.Talk
+    has_many :meetup_owners, ElixirLangTokyo.Community.MeetupOwner
 
     timestamps()
   end

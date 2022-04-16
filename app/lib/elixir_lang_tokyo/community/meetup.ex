@@ -10,6 +10,7 @@ defmodule ElixirLangTokyo.Community.Meetup do
     field :site, :string
 
     has_many :events, ElixirLangTokyo.Community.Event
+    has_many :meetup_owners, ElixirLangTokyo.Community.MeetupOwner
 
     timestamps()
   end
