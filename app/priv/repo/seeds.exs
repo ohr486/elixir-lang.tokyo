@@ -10,7 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alchemist = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Alchemist{
+alchemist = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Alchemist{
   name: "ohr486", github: "ohr486", twitter: "ohrdev"
 })
 

@@ -5,7 +5,7 @@ defmodule ElixirLangTokyo.Community.Talk do
   import Ecto.Changeset
 
   schema "talks" do
-    belongs_to :alchemist, ElixirLangTokyo.Community.Alchemist
+    belongs_to :alchemist, ElixirLangTokyo.Alchemist
     belongs_to :event, ElixirLangTokyo.Community.Event
     field :slide, :string
     field :title, :string

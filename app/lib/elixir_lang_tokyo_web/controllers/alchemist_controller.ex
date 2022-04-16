@@ -2,7 +2,7 @@ defmodule ElixirLangTokyoWeb.AlchemistController do
   use ElixirLangTokyoWeb, :controller
 
   alias ElixirLangTokyo.Community
-  alias ElixirLangTokyo.Community.Alchemist
+  alias ElixirLangTokyo.Alchemist
 
   def index(conn, _params) do
     alchemists = Community.list_alchemists()
