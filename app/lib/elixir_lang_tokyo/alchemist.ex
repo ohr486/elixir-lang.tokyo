@@ -1,4 +1,4 @@
-defmodule ElixirLangTokyo.Community.Alchemist do
+defmodule ElixirLangTokyo.Alchemist do
   @moduledoc false
 
   use Ecto.Schema

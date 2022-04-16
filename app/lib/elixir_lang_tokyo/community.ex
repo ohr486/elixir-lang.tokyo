@@ -294,7 +294,7 @@ defmodule ElixirLangTokyo.Community do
     Talk.changeset(talk, attrs)
   end
 
-  alias ElixirLangTokyo.Community.Alchemist
+  alias ElixirLangTokyo.Alchemist
 
   @doc """
   Returns the list of alchemists.

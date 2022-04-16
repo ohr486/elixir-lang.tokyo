@@ -174,7 +174,7 @@ defmodule ElixirLangTokyo.CommunityTest do
   end
 
   describe "alchemists" do
-    alias ElixirLangTokyo.Community.Alchemist
+    alias ElixirLangTokyo.Alchemist
 
     import ElixirLangTokyo.CommunityFixtures
 
