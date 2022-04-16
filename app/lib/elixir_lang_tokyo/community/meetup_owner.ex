@@ -4,7 +4,7 @@ defmodule ElixirLangTokyo.Community.MeetupOwner do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "community_meetup_owners" do
+  schema "meetup_owners" do
     belongs_to :alchemist, ElixirLangTokyo.Alchemist
     belongs_to :meetup, ElixirLangTokyo.Community.Meetup
 

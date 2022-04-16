@@ -62,7 +62,7 @@ defmodule ElixirLangTokyo.CommunityFixtures do
         name: "some name",
         twitter: "some twitter"
       })
-      |> ElixirLangTokyo.Community.create_alchemist()
+      |> ElixirLangTokyo.Alchemist.create_alchemist()
 
     alchemist
   end
