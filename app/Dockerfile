@@ -3,7 +3,7 @@ FROM elixir:1.13.2-slim
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
-  inotify-tools git npm && \
+  inotify-tools git npm vim && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
