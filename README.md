@@ -26,8 +26,3 @@ $ docker-compose run app mix erd
 $ ./open_erd.sh
 ```
 
-## Deploy
-
-
-
-

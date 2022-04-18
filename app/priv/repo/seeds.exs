@@ -10,12 +10,18 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alchemist = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Alchemist{
+alias ElixirLangTokyo.Repo
+
+alchemist = Repo.insert!(%ElixirLangTokyo.Alchemist{
   name: "ohr486", github: "ohr486", twitter: "ohrdev"
 })
 
 meetup = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Meetup{
   name: "tokyo.ex", site: "https://beam-lang.connpass.com/", hashtag: "tokyoex"
+})
+
+meetup_owner = Repo.insert!(%ElixirLangTokyo.Community.MeetupOwner{
+  meetup: meetup, alchemist: alchemist
 })
 
 event = ElixirLangTokyo.Repo.insert!(%ElixirLangTokyo.Community.Event{

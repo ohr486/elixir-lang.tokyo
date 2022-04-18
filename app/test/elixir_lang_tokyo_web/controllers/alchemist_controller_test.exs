@@ -1,7 +1,7 @@
 defmodule ElixirLangTokyoWeb.AlchemistControllerTest do
   use ElixirLangTokyoWeb.ConnCase
 
-  import ElixirLangTokyo.CommunityFixtures
+  import ElixirLangTokyo.AlchemistFixtures
 
   @create_attrs %{github: "some github", name: "some name", twitter: "some twitter"}
   @update_attrs %{github: "some updated github", name: "some updated name", twitter: "some updated twitter"}
