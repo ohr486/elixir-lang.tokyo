@@ -26,3 +26,10 @@ $ docker-compose run app mix erd
 $ ./open_erd.sh
 ```
 
+## How to setup AWS Resources
+
+```bash
+$ cd aws
+$ terraform init
+$ terraform plan
+```
