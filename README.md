@@ -146,6 +146,10 @@ $ terraform plan
 - Infrastructure
   - Cloud
     - AWS
+      - Domain
+        - [ ] Route53
+      - Network
+        - [ ] VPN
       - LoadBalancer
         - [ ] ALB
       - Compute
@@ -167,6 +171,10 @@ $ terraform plan
       - Security
         - TODO
     - GCP
+      - Domain
+        - TODO
+      - Network
+        - TODO
       - LoadBalancer
         - TODO
       - Compute
