@@ -1,0 +1,44 @@
+- hosts: all
+  remote_user: ec2-user
+  become: true
+  tasks:
+    - name: yum update
+      shell: yum update -y
+
+    - name: install dev-tools
+      shell: yum -y groupinstall "Development Tools"
+
+    - name: install pkgs
+      yum: name={{ item }}
+      with_items:
+        - git
+        - curl
+
+    - name: download asdf
+      git:
+        repo: https://github.com/asdf-vm/asdf.git
+        dest: /usr/local/asdf
+        depth: 1
+        version: v0.10.0
+
+    - lineinfile: dest=/etc/bashrc line=". /usr/local/asdf/asdf.sh"
+    - lineinfile: dest=/etc/bashrc line="PATH=$PATH:/usr/local/asdf/bin"
+
+    - lineinfile: dest=/home/ec2-user/.bash_profile line=". /usr/local/asdf/completions/asdf.bash"
+    - lineinfile: dest=/root/.bash_profile line=". /usr/local/asdf/completions/asdf.bash"
+
+#    - name: add asdf plugins
+#      become: false
+#      shell: |
+#        asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+#        asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
+#        asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+    - name: install erlang
+      become: false
+      shell: asdf install erlang 24.3.3
+
+    - name: install elixir
+      become: false
+      shell: asdf install elixir 1.13.4
+
