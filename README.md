@@ -26,8 +26,7 @@ $ docker-compose run app mix erd
 $ ./open_erd.sh
 ```
 
-TODO:
-## How to setup AWS Resources
+## TODO: How to setup AWS Resources
 
 ```bash
 $ cd aws
@@ -35,48 +34,122 @@ $ terraform init
 $ terraform plan
 ```
 
-## Task List
+## TODO: Task List
 
 - App
   - Database
-    - [ ] PostgreSQL
-    - [x] MySQL
-  - Cache
-    - [ ] Redis
-    - [ ] Memcached
-  - Task
+    - RDB
+      - [ ] PostgreSQL
+      - [x] MySQL
+      - [ ] CloudSpanner
+    - CloudDB
+      - [ ] DynamoDB
+    - KVS
+      - [ ] Redis
+      - [ ] Memcached
+    - MultiDB
+      - TODO
+  - API
+    - REST
+      - [ ] PhoenixController
+    - WebSocket
+      - [ ] PhoenixChannel
+    - GraphQL
+      - TODO
+    - gRPC
+      - TODO
+  - Task Queue
     - [ ] exq
-  - Document
-    - Swagger
-      - [ ] phoenix\_swagger
-    - ERD
-      - [x] ecto\_erd
-  - Test
-    - Lint
-      - [x] credo
   - Admin
     - [ ] ex\_admin
+  - Auth
+    - LDAP
+      - [ ] ex\_ldap
+  - Monitoring
+    - [ ] NewRelic
+    - [ ] DataDog
+    - [ ] AppSignal
+    - [ ] ScountApp
+    - [ ] Splunk
 
 - Local Development Environment
   - Docker
     - [x] Dockerfile
     - [x] docker-compose
+  - Test
+    - Lint
+      - [x] credo
+      - [ ] dogma
+    - Static Analysis
+      - [ ] dialyxir
+    - TDD
+      - TODO
+  - Document
+    - Swagger
+      - [ ] phoenix\_swagger
+    - ERD
+      - [x] ecto\_erd
+  - IDE/Editor
+    - [ ] VisualStudioCode
+    - [ ] JetBrain
+    - [ ] vim
+    - [ ] emacs
 
-- CI
-  - [ ] Github Action
-  - [x] CircleCI
-  - [ ] TravisCI
+- DevOps
+  - CI
+    - [ ] Github Action
+    - [x] CircleCI
+    - [ ] TravisCI
+  - Notification
+    - [ ] slack
+    - [ ] discord
+    - [ ] chatwork
+  - Bot
+    - TODO
+
+- Load Test
+  - TODO
+
+- Security Test
+  - TODO
 
 - Infrastructure
   - Cloud
     - AWS
-      - [ ] EC2
-      - [ ] ECS
-      - [ ] EKS
+      - LoadBalancer
+        - [ ] ALB
+      - Compute
+        - [ ] EC2
+        - [ ] ECS
+        - [ ] EKS
+      - Database
+        - [ ] Aurora
+        - [ ] ElastiCache
+      - CD
+        - [ ] CodePipeline
+        - [ ] CodeBuild
+        - [ ] CodeDeploy
+      - Firewall
+        - [ ] WAF
+      - Security
+        - TODO
     - GCP
-      - [ ] GCE
-      - [ ] GKE
-      - [ ] GAE
+      - LoadBalancer
+        - TODO
+      - Compute
+        - [ ] GCE
+        - [ ] GKE
+        - [ ] GAE
+      - DB
+        - TODO
+      - CD
+        - TODO
+      - Firewall
+        - TODO
+      - Security
+        - TODO
+    - Azure
+      - TODO
   - PaaS
     - [ ] Heroku
     - [ ] Gigalixir
