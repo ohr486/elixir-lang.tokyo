@@ -7,18 +7,13 @@ orbs:
 jobs:
   terraform_aws:
     executor: terraform/default
-    working_directory: ~/repo
+    working_directory: ~/repo/infra/aws
     steps:
       - checkout
       - run: env # for debug
       - run: pwd # for debug
-
-      - terraform/init:
-          path: "infra/aws"
-
       - terraform/plan:
-          path: "infra/aws"
-
+          checkout: true
       - slack/notify:
           event: always
 
@@ -31,20 +26,16 @@ jobs:
       - image: circleci/mysql:8.0
         environment:
           MYSQL_ROOT_PASSWORD: root
-
     working_directory: ~/repo
-
     steps:
       - checkout
       - run: env # for debug
-
       - run: mix local.hex --force
       - run: mix local.rebar --force
       - restore_cache:
           keys:
             - v1-build-cache-{{ .Branch }}
             - v1-build-cache
-
       - run:
           working_directory: app
           command: mix do deps.get, compile
@@ -54,15 +45,12 @@ jobs:
       - save_cache:
           key: v1-build-cache-{{ .Branch }}
           paths: "app/_build"
-
       - run:
           working_directory: app
           command: mix lint
-
       - run:
           working_directory: app
           command: mix test
-
       - slack/notify:
           event: always
 
@@ -71,6 +59,8 @@ workflows:
     jobs:
       - build:
           context: ohr486-circleci-notification
+  terraform-plan:
+    jobs:
       - terraform_aws:
           context:
             - ohr486-circleci-notification
