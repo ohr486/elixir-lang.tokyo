@@ -11,9 +11,10 @@ jobs:
     steps:
       - checkout
       - run: env # for debug
+      - run: pwd # for debug
 
       - terraform/init:
-          workspace-root-dir: "infra/aws"
+          attach-workspace: "infra/aws"
 
       - terraform/plan:
           workspace-root: "infra/aws"
