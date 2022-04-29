@@ -14,10 +14,10 @@ jobs:
       - run: pwd # for debug
 
       - terraform/init:
-          attach-workspace: "infra/aws"
+          path: "infra/aws"
 
       - terraform/plan:
-          workspace-root: "infra/aws"
+          path: "infra/aws"
 
       - slack/notify:
           event: always
