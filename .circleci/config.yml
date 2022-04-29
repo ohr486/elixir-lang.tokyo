@@ -55,6 +55,6 @@ workflows:
       - build:
           context: ohr486-circleci-notification
       - terraform/plan:
-          workspace-root: "infra/aws"
+          workspace-root: "~/repo/infra/aws"
           context: ohr486-aws-terraform
           
