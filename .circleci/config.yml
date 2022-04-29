@@ -5,7 +5,7 @@ orbs:
   terraform: circleci/terraform@3.0.1
 
 jobs:
-  terrafom_aws:
+  terraform_aws:
     working_directory: ~/repo
     steps:
       - checkout
