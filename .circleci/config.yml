@@ -13,7 +13,7 @@ jobs:
       - run: env # for debug
 
       - terraform/init:
-          workspace-root: "infra/aws"
+          workspace-root-dir: "infra/aws"
 
       - terraform/plan:
           workspace-root: "infra/aws"
