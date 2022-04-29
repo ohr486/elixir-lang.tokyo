@@ -52,6 +52,14 @@ $ terraform plan
       - [ ] Memcached
     - MultiDB
       - TODO
+  - Auth
+    - Oauth
+      - [ ] Google
+      - [ ] Twitter
+      - [ ] Facebook
+      - [ ] GitHub
+    - LDAP
+      - [ ] ex\_ldap
   - API
     - REST
       - [ ] PhoenixController
@@ -61,26 +69,39 @@ $ terraform plan
       - TODO
     - gRPC
       - TODO
+  - PubSub
+    - TODO
   - View
     - TODO
+  - Configuration
+    - [ ] dotenv
   - Task Queue
     - [ ] exq
+  - CLI
+    - TODO
   - Admin
     - [ ] ex\_admin
-  - Auth
-    - LDAP
-      - [ ] ex\_ldap
+  - Mail
+    - TODO
   - Monitoring
-    - [ ] NewRelic
-    - [ ] DataDog
-    - [ ] AppSignal
-    - [ ] ScountApp
-    - [ ] Splunk
+    - Logging
+      - TODO
+    - APM
+      - [ ] NewRelic
+      - [ ] DataDog
+      - [ ] AppSignal
+      - [ ] ScountApp
+      - [ ] Splunk
+    - Error
+      - [ ] Sentry
+      - [ ] Honeybadger
 
 - Local Development Environment
   - Docker
     - [x] Dockerfile
     - [x] docker-compose
+  - DeBug
+    - TODO
   - Test
     - Lint
       - [x] credo
@@ -89,9 +110,13 @@ $ terraform plan
       - [ ] dialyxir
     - TDD
       - TODO
+    - BDD
+      - TODO
   - Document
     - Swagger
       - [ ] phoenix\_swagger
+    - API Spec
+      - [ ] Postman
     - ERD
       - [x] ecto\_erd
   - IDE/Editor
