@@ -5,6 +5,22 @@ orbs:
   terraform: circleci/terraform@3.0.1
 
 jobs:
+  terraform:
+    executor: terraform/default
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: env # for debug
+
+      - terraform/init:
+          workspace-root: "infra/aws"
+
+      - terraform/plan:
+          workspace-root: "infra/aws"
+
+      - slack/notify:
+          event: always
+
   build:
     docker:
       - image: circleci/elixir:1.13-node
@@ -54,7 +70,8 @@ workflows:
     jobs:
       - build:
           context: ohr486-circleci-notification
-      - terraform/plan:
-          workspace-root: "~/repo/infra/aws"
-          context: ohr486-aws-terraform
+      - terraform_aws:
+          context:
+            - ohr486-circleci-notification
+            - ohr486-aws-terraform
           
