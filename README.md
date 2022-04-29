@@ -26,6 +26,7 @@ $ docker-compose run app mix erd
 $ ./open_erd.sh
 ```
 
+TODO:
 ## How to setup AWS Resources
 
 ```bash
@@ -33,3 +34,51 @@ $ cd aws
 $ terraform init
 $ terraform plan
 ```
+
+## Task List
+
+- App
+  - Database
+    - [ ] PostgreSQL
+    - [x] MySQL
+  - Cache
+    - [ ] Redis
+    - [ ] Memcached
+  - Task
+    - [ ] exq
+  - Document
+    - Swagger
+      - [ ] phoenix\_swagger
+    - ERD
+      - [x] ecto\_erd
+  - Test
+    - Lint
+      - [x] credo
+  - Admin
+    - [ ] ex\_admin
+
+- Local Development Environment
+  - Docker
+    - [x] Dockerfile
+    - [x] docker-compose
+
+- CI
+  - [ ] Github Action
+  - [x] CircleCI
+  - [ ] TravisCI
+
+- Infrastructure
+  - Cloud
+    - AWS
+      - [ ] EC2
+      - [ ] ECS
+      - [ ] EKS
+    - GCP
+      - [ ] GCE
+      - [ ] GKE
+      - [ ] GAE
+  - PaaS
+    - [ ] Heroku
+    - [ ] Gigalixir
+    - [ ] Fly.io
+
