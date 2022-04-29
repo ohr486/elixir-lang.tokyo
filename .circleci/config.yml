@@ -2,20 +2,8 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@4.9.3
-  terraform: circleci/terraform@3.0.1
 
 jobs:
-  terraform_aws:
-    executor: terraform/default
-    working_directory: ~/repo/infra/aws
-    steps:
-      - checkout
-      - run: env # for debug
-      - run: pwd # for debug
-      - terraform/plan
-      - slack/notify:
-          event: always
-
   build:
     docker:
       - image: circleci/elixir:1.13-node
@@ -58,10 +46,3 @@ workflows:
     jobs:
       - build:
           context: ohr486-circleci-notification
-  terraform-plan:
-    jobs:
-      - terraform_aws:
-          context:
-            - ohr486-circleci-notification
-            - ohr486-aws-terraform
-          
