@@ -12,13 +12,13 @@ jobs:
       - run: env # for debug
 
       - terraform/fmt:
-          workspace-root: ./infra/aws
+          workspace-root: "infra/aws"
 
       - terraform/validate:
-          workspace-root: ./infra/aws
+          workspace-root: "infra/aws"
 
       - terraform/plan:
-          workspace-root: ./infra/aws
+          workspace-root: "infra/aws"
 
       - slack/notify:
           event: always
