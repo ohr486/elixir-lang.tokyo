@@ -26,7 +26,7 @@ $ docker-compose run app mix erd
 $ ./open_erd.sh
 ```
 
-![ERD-Graph](./tmp.erd.png)
+![ERD-Graph](tmp/erd.png)
 
 
 ## TODO: How to setup AWS Resources
