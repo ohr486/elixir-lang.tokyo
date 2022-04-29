@@ -26,6 +26,9 @@ $ docker-compose run app mix erd
 $ ./open_erd.sh
 ```
 
+![ERD-Graph](./tmp.erd.png)
+
+
 ## TODO: How to setup AWS Resources
 
 ```bash
@@ -34,7 +37,7 @@ $ terraform init
 $ terraform plan
 ```
 
-## TODO: Task List
+## TODO: Reference Implementation List
 
 - App
   - Database
@@ -58,6 +61,8 @@ $ terraform plan
       - TODO
     - gRPC
       - TODO
+  - View
+    - TODO
   - Task Queue
     - [ ] exq
   - Admin
@@ -125,7 +130,10 @@ $ terraform plan
       - Database
         - [ ] Aurora
         - [ ] ElastiCache
-      - CD
+      - CDN
+        - [ ] S3
+        - [ ] CloudFront
+      - CI/CD
         - [ ] CodePipeline
         - [ ] CodeBuild
         - [ ] CodeDeploy
@@ -140,9 +148,11 @@ $ terraform plan
         - [ ] GCE
         - [ ] GKE
         - [ ] GAE
-      - DB
+      - Database
         - TODO
-      - CD
+      - CDN
+        - TODO
+      - CI/CD
         - TODO
       - Firewall
         - TODO
