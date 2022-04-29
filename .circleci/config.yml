@@ -13,7 +13,6 @@ jobs:
       - run: env # for debug
       - run: pwd # for debug
       - terraform/plan:
-          checkout: true
       - slack/notify:
           event: always
 
