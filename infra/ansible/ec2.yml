@@ -13,6 +13,13 @@
       with_items:
         - git
         - curl
+        - openssl
+        - openssl-devel
+        - gcc-c++
+        - unixODBC
+        - unixODBC-devel
+        - fop
+        - java-1.8.0-openjdk-devel
 
     - name: download asdf
       git:
@@ -31,14 +38,24 @@
 #      become: false
 #      shell: |
 #        asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-#        asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
 #        asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 
     - name: install erlang
       become: false
-      shell: asdf install erlang 24.3.3
+      shell: |
+        asdf install erlang 24.3.3
+        asdf global erlang 24.3.3
 
     - name: install elixir
       become: false
-      shell: asdf install elixir 1.13.4
+      shell: |
+        asdf install elixir 1.13.3
+        asdf global elixir 1.13.3
+
+    - name: install hex, reber, phx
+      become: false
+      shell: |
+        mix local.hex --force
+        mix local.rebar --force
+        mix archive.install --force hex phx_new
 
