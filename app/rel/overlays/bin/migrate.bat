@@ -1,0 +1,1 @@
+call "%~dp0\elixir_lang_tokyo" eval ElixirLangTokyo.Release.migrate
