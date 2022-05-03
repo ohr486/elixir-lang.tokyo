@@ -2,7 +2,7 @@
 
 ## CI Status
 
-| branch  | test&lint                                                                                                                                                 |
+| branch  | CircleCI                                                                                                                                                  |
 |:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | master  | [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/master.svg?style=svg)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/master)   |
 | develop | [![CircleCI](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop.svg?style=svg)](https://circleci.com/gh/ohr486/elixir-lang.tokyo/tree/develop) |
