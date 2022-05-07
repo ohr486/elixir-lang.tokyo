@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: ohr486/elixir:1.13-erl-24.3-node-18.x-rust-1.60
+      - image: ohr486/elixir:1.13-erl-24.3-node-18.x-rust-1.60-x86_64
         environment:
           MIX_ENV: test
           MIX_TEST_DB_HOST: localhost
