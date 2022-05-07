@@ -4,7 +4,9 @@ services:
   app:
     build:
       context: .
+      dockerfile: Dockerfile.ex_and_rst
     command: mix phx.server
+    platform: linux/arm64 # for M1 mac
     environment:
       MIX_TEST_DB_HOST: mysql
     ports:
