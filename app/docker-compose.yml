@@ -5,6 +5,7 @@ services:
     build:
       context: .
     command: mix phx.server
+    platform: linux/arm64 # for M1 mac
     environment:
       MIX_TEST_DB_HOST: mysql
     ports:

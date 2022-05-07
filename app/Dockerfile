@@ -1,13 +1,11 @@
-FROM elixir:1.13.2-slim
+FROM ohr486/elixir:1.13-erl-24.3-node-18.x-rust-1.60-aarch64
+
+ENV LANG="ja_JP.UTF-8"
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-  inotify-tools git npm vim && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
-
 RUN mix do \
-  local.hex --force, \
-  local.rebar --force, \
-  archive.install --force hex phx_new
+      local.hex --force, \
+      local.rebar --force, \
+      archive.install --force hex phx_new
+
