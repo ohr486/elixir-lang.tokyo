@@ -60,6 +60,8 @@ $ terraform plan
       - [ ] GitHub
     - LDAP
       - [ ] ex\_ldap
+    - Web3
+      - [ ] metamask
   - API
     - REST
       - [ ] PhoenixController
