@@ -1,7 +1,5 @@
 FROM ohr486/elixir:1.13-erl-24.3-node-18.x-rust-1.60-aarch64
 
-ENV LANG="ja_JP.UTF-8"
-
 WORKDIR /app
 
 RUN mix do \
