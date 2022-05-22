@@ -61,7 +61,7 @@ $ terraform plan
     - LDAP
       - [ ] ex\_ldap
     - Web3
-      - [ ] metamask
+      - [ ] MM
   - API
     - REST
       - [ ] PhoenixController
