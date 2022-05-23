@@ -140,7 +140,8 @@ $ terraform plan
     - TODO
 
 - Load Test
-  - TODO
+  - [ ] locust
+  - [ ] jmeter
 
 - Security Test
   - TODO
@@ -180,4 +181,3 @@ $ terraform plan
     - [ ] Heroku
     - [ ] Gigalixir
     - [ ] Fly.io
-
