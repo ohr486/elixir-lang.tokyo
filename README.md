@@ -182,3 +182,4 @@ $ terraform plan
     - [ ] Gigalixir
     - [ ] Fly.io
 
+## How to contribute
